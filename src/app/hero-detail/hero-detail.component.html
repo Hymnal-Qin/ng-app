@@ -1,0 +1,35 @@
+<!--
+绑定表达式中的 uppercase 位于管道操作符（ | ）的右边，
+用来调用内置管道 UppercasePipe。
+管道 是格式化字符串、金额、日期和其它显示数据的好办法。
+Angular 发布了一些内置管道，而且你还可以创建自己的管道
+-->
+<!--使用 *ngIf 隐藏空白的详情-->
+<div *ngIf="hero">
+<!-- Angular 自带了很多管道  https://angular.cn/api?type=pipe -->
+<!--  要在 HTML 模板中指定值的转换方式，请使用 管道操作符 (|) -->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <!--    [(ngModel)] 是 Angular 的双向数据绑定语法。 -->
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+  </div>
+</div>
+
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>
+
+
+<!--
+数据绑定
+
+如果没有框架，你就要自己负责把数据值推送到 HTML 控件中，并把来自用户的响应转换成动作和对值的更新。 手动写这种数据推拉逻辑会很枯燥、容易出错，难以阅读 —— 有前端 JavaScript 开发经验的程序员一定深有体会。
+
+Angular 支持双向数据绑定，这是一种对模板中的各个部件与组件中的各个部件进行协调的机制。 往模板 HTML 中添加绑定标记可以告诉 Angular 该如何连接它们。
+
+-->
+<!--<button (click)="save()">save</button>-->
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
+<!--<input [(ngModel)]="hero.name" placeholder="name"/>-->
